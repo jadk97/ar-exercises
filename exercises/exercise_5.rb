@@ -10,6 +10,7 @@ puts "----------"
 # Your code goes here ...
 @total_annual_revenue = Store.sum("annual_revenue")
 @average_annual_revenue = Store.average("annual_revenue")
-@millionaires = Store.
+@millionaires = Store.where("annual_revenue > ?", 1000000).count()
 puts @total_annual_revenue
 puts @average_annual_revenue
+puts @millionaires
